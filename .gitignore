@@ -4,6 +4,7 @@
 /public/images/admins/*
 /public/images/customers/*
 /public/images/users/*
+/public/files/projects/*
 /storage/*.key
 /vendor
 .env
