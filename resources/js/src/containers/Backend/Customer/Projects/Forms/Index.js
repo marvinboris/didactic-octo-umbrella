@@ -98,6 +98,82 @@ class Index extends Component {
         else this.setState({ page: page - 1 });
     }
 
+    initImageZoom = () => {
+        const { clientHeight, clientWidth } = document.querySelector('#img-container img');
+        const options = {
+            width: clientWidth,
+            // height: clientHeight / 3,
+            zoomPosition: 'left',
+            zoomWidth: clientWidth / 3,
+            // zoomLensStyle: `height: ${clientHeight / 3}px`
+        };
+        new ImageZoom(document.getElementById("img-container"), options);
+    }
+
+    initMicrosoftOcr = imageUrl => {
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'X-RapidAPI-Host': 'microsoft-computer-vision3.p.rapidapi.com',
+                'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
+            },
+            body: '{"url":"' + imageUrl + '"}'
+        };
+
+        fetch('https://microsoft-computer-vision3.p.rapidapi.com/analyze?language=en&descriptionExclude%5B0%5D=Celebrities&visualFeatures%5B0%5D=ImageType&details%5B0%5D=Celebrities', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
+
+    loadImage = imageUrl => {
+        const request = new XMLHttpRequest();
+        request.responseType = "blob";
+        request.onload = () => this.initVinOcr(request.response);
+        request.open("GET", imageUrl);
+        request.send();
+    }
+
+    initVinOcr = imageFile => {
+        const data = new FormData();
+        data.append("imageFile", imageFile);
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'X-RapidAPI-Host': 'vin-recognition.p.rapidapi.com',
+                'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
+            },
+            body: data
+        };
+
+        fetch('https://vin-recognition.p.rapidapi.com/v2', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
+
+    initOcrApi = imageUrl => {
+        const encodedParams = new URLSearchParams();
+        encodedParams.append("url", imageUrl);
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded',
+                'X-RapidAPI-Host': 'ocr43.p.rapidapi.com',
+                'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
+            },
+            body: encodedParams
+        };
+
+        fetch('https://ocr43.p.rapidapi.com/v1/results', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
+
 
 
     // Lifecycle components
@@ -114,15 +190,10 @@ class Index extends Component {
                 this.filledFields(form.body, filledFields);
                 const progress = Math.round(filledFields.length * 100 / allFields.length);
 
-                const { clientHeight, clientWidth } = document.querySelector('#img-container img');
-                const options = {
-                    width: clientWidth,
-                    // height: clientHeight / 3,
-                    zoomPosition: 'left',
-                    zoomWidth: clientWidth / 3,
-                    // zoomLensStyle: `height: ${clientHeight / 3}px`
-                };
-                new ImageZoom(document.getElementById("img-container"), options);
+                this.initImageZoom();
+                // this.initMicrosoftOcr(form.file);
+                // this.loadImage(form.file);
+                this.initOcrApi(form.file);
 
                 this.setState({ progress });
             });
@@ -206,6 +277,7 @@ class Index extends Component {
                 <div className='image'>
                     <div id='img-container'>
                         <img src={file} className="w-100" />
+                        <input hidden type="file" />
                     </div>
 
                     <div className='zoom'>

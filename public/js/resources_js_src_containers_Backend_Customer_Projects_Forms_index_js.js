@@ -729,6 +729,93 @@ var Index = /*#__PURE__*/function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "initImageZoom", function () {
+      var _document$querySelect = document.querySelector('#img-container img'),
+          clientHeight = _document$querySelect.clientHeight,
+          clientWidth = _document$querySelect.clientWidth;
+
+      var options = {
+        width: clientWidth,
+        // height: clientHeight / 3,
+        zoomPosition: 'left',
+        zoomWidth: clientWidth / 3 // zoomLensStyle: `height: ${clientHeight / 3}px`
+
+      };
+      new (js_image_zoom__WEBPACK_IMPORTED_MODULE_2___default())(document.getElementById("img-container"), options);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "initMicrosoftOcr", function (imageUrl) {
+      var options = {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'X-RapidAPI-Host': 'microsoft-computer-vision3.p.rapidapi.com',
+          'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
+        },
+        body: '{"url":"' + imageUrl + '"}'
+      };
+      fetch('https://microsoft-computer-vision3.p.rapidapi.com/analyze?language=en&descriptionExclude%5B0%5D=Celebrities&visualFeatures%5B0%5D=ImageType&details%5B0%5D=Celebrities', options).then(function (response) {
+        return response.json();
+      }).then(function (response) {
+        return console.log(response);
+      })["catch"](function (err) {
+        return console.error(err);
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "loadImage", function (imageUrl) {
+      var request = new XMLHttpRequest();
+      request.responseType = "blob";
+
+      request.onload = function () {
+        return _this.initVinOcr(request.response);
+      };
+
+      request.open("GET", imageUrl);
+      request.send();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "initVinOcr", function (imageFile) {
+      var data = new FormData();
+      data.append("imageFile", imageFile);
+      var options = {
+        method: 'POST',
+        headers: {
+          'X-RapidAPI-Host': 'vin-recognition.p.rapidapi.com',
+          'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
+        },
+        body: data
+      };
+      fetch('https://vin-recognition.p.rapidapi.com/v2', options).then(function (response) {
+        return response.json();
+      }).then(function (response) {
+        return console.log(response);
+      })["catch"](function (err) {
+        return console.error(err);
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "initOcrApi", function (imageUrl) {
+      var encodedParams = new URLSearchParams();
+      encodedParams.append("url", imageUrl);
+      var options = {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'X-RapidAPI-Host': 'ocr43.p.rapidapi.com',
+          'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
+        },
+        body: encodedParams
+      };
+      fetch('https://ocr43.p.rapidapi.com/v1/results', options).then(function (response) {
+        return response.json();
+      }).then(function (response) {
+        return console.log(response);
+      })["catch"](function (err) {
+        return console.error(err);
+      });
+    });
+
     return _this;
   }
 
@@ -753,18 +840,11 @@ var Index = /*#__PURE__*/function (_Component) {
 
           var progress = Math.round(filledFields.length * 100 / allFields.length);
 
-          var _document$querySelect = document.querySelector('#img-container img'),
-              clientHeight = _document$querySelect.clientHeight,
-              clientWidth = _document$querySelect.clientWidth;
+          _this2.initImageZoom(); // this.initMicrosoftOcr(form.file);
+          // this.loadImage(form.file);
 
-          var options = {
-            width: clientWidth,
-            // height: clientHeight / 3,
-            zoomPosition: 'left',
-            zoomWidth: clientWidth / 3,
-            zoomLensStyle: "height: ".concat(clientHeight / 3, "px")
-          };
-          new (js_image_zoom__WEBPACK_IMPORTED_MODULE_2___default())(document.getElementById("img-container"), options);
+
+          _this2.initOcrApi(form.file);
 
           _this2.setState({
             progress: progress
@@ -971,12 +1051,15 @@ var Index = /*#__PURE__*/function (_Component) {
           className: "col-lg-6 right-content",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
             className: "image",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
               id: "img-container",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
                 src: file,
                 className: "w-100"
-              })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("input", {
+                hidden: true,
+                type: "file"
+              })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
               className: "zoom",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Backend_UI_View_View__WEBPACK_IMPORTED_MODULE_5__["default"], {
