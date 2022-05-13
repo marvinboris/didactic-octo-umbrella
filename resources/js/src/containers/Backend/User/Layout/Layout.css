@@ -1,0 +1,43 @@
+.Backend.User .main {
+    padding-left: var(--app-sidebar-width);
+    color: var(--border);
+    min-height: 100vh;
+    background-color: var(--soft);
+}
+
+.Backend.User .main .sticky-top {
+    display: flex;
+    background-color: var(--white);
+}
+
+.Backend.User .main .sticky-top>.d-flex {
+    padding: 26px 86px 21px 34px;
+}
+
+.Backend.User .main .sticky-top .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 430px;
+    padding: 0 33px;
+    border-left: 1px solid var(--border-20);
+}
+
+.Backend.User .main .sticky-top .user-info .name {
+    font-weight: 700;
+}
+
+.Backend.User .main .sticky-top .user-info .token {
+    color: var(--green);
+    font-size: 16px;
+}
+
+.Backend.User .main .profile-pic {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+.Backend.User main>div>.content {
+    padding: 48px 43px;
+}

@@ -1,0 +1,64 @@
+.Frontend .Toolbar {
+    top: 0;
+}
+
+.Frontend .Toolbar > div {
+    height: 66px;
+    background: var(--nightblue);
+}
+
+.Frontend .Toolbar > .fixed-top {
+    top: 0px;
+    /* transition: all .25s; */
+}
+
+.Frontend .Toolbar #main-nav {
+    top: 100%;
+    background-color: transparent;
+    box-shadow: 0 2px 4px 0 transparent;
+    background-color: var(--soft);
+    box-shadow: 0 2px 4px 0 var(--black-25);
+    transition: all 0.25s;
+}
+
+.Frontend .Toolbar #main-nav.scrolled {
+    background-color: var(--soft);
+    box-shadow: 0 2px 4px 0 var(--black-25);
+}
+
+.Frontend .Toolbar #progress-bar {
+    display: block;
+    width: auto;
+    height: 4px;
+    border-radius: 0px;
+    background: linear-gradient(to right, #00710d, #c41e00, #ffce00);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    transform: translateY(100%);
+    animation: coloor 2s ease-in infinite;
+}
+
+@keyframes coloor {
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .Frontend .Toolbar > div {
+        height: 87px;
+        background: var(--darkblue);
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .Frontend .Toolbar > div {
+        height: 100px;
+    }
+}

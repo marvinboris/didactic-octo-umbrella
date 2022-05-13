@@ -1,0 +1,744 @@
+{
+    "global": {
+        "app_name": "Data Entry",
+        "company_name": "Yungong Briand",
+        "company_logo": "\/images\/company-logo.png",
+        "logo": {
+            "dark": "\/images\/logo.png",
+            "light": "\/images\/logo-light.png",
+            "big": "\/images\/logo.png",
+            "named": "\/images\/logo-named.png"
+        }
+    },
+    "pages": {
+        "en": {
+            "general": {
+                "date": "Date",
+                "time": "Time",
+                "home": "Home",
+                "loading": "Loading",
+                "days": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "months": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ]
+            },
+            "components": {
+                "form": {
+                    "save": "Save",
+                    "save_add": "Save & Add",
+                    "selected_file": "File selected",
+                    "active": "Active",
+                    "inactive": "Inactive"
+                },
+                "form_block": {
+                    "form": "Form",
+                    "available": "Available",
+                    "approved": "Approved",
+                    "pending": "Pending",
+                    "rejected": "Rejected",
+                    "by": "By",
+                    "edited": "Edited on",
+                    "published": "Published on",
+                    "error_found": "error found",
+                    "errors_found": "errors found",
+                    "not_available": "Not Available Yet",
+                    "body": {
+                        "group": "Group",
+                        "form_number": "Form Number",
+                        "company_code": "Company Code",
+                        "company_name": "Company Name"
+                    }
+                },
+                "project_block": {
+                    "project": "Project",
+                    "unavailable": "Unavailable",
+                    "available": "Available",
+                    "completed": "Completed",
+                    "verification": "Project under verification",
+                    "closes": "Project closes in",
+                    "starting": "Starting in",
+                    "days": "days"
+                },
+                "list": {
+                    "action": "Action",
+                    "all": "All",
+                    "first": "First",
+                    "last": "Last",
+                    "loading": "Loading",
+                    "print": "Print",
+                    "pdf": "PDF",
+                    "csv": "CSV",
+                    "excel": "Excel",
+                    "search": "Search",
+                    "see": "See",
+                    "show": "Show",
+                    "sl": "SL",
+                    "showing": "Showing",
+                    "from": "from",
+                    "entries": {
+                        "singular": "entry",
+                        "plural": "entries"
+                    }
+                }
+            },
+            "auth": {
+                "footer": {
+                    "copyrights": "Copyrights",
+                    "all_rights": "All rights reserved by"
+                },
+                "user": {
+                    "login": {
+                        "title": "Welcome User !",
+                        "sign_in": "Sign In",
+                        "email_address": "E-mail address",
+                        "password": "Password"
+                    }
+                },
+                "customer": {
+                    "layout": {
+                        "work_from": "Work from",
+                        "home": "home",
+                        "data_entry": "DataEntry"
+                    },
+                    "login": {
+                        "title": "Sign In.",
+                        "no_account": "Don't have an account",
+                        "signup": "Sign up",
+                        "reset": "Reset here",
+                        "token": "Token ID",
+                        "password": "Password",
+                        "sign_in": "Sign In",
+                        "forgot": "Forgot password"
+                    },
+                    "signup": {
+                        "title": "Sign up",
+                        "already_account": "Already have an account",
+                        "login": "Log in",
+                        "phone": "Phone",
+                        "password": "Password",
+                        "password_confirmation": "Confirm password",
+                        "signup": "Sign up",
+                        "by_clicking": "By clicking, you accept our",
+                        "terms": "Terms & Conditions",
+                        "next": "Next",
+                        "previous": "Previous"
+                    }
+                },
+                "admin": {
+                    "login": {
+                        "sign_in_to": "Sign In to",
+                        "sign_in": "Sign In",
+                        "admin_panel": "Admin Panel",
+                        "email_address": "E-mail address",
+                        "password": "Password",
+                        "sms": "SMS",
+                        "email": "E-mail",
+                        "otp_method": "OTP Method"
+                    },
+                    "verify": {
+                        "enter": "Enter",
+                        "verification_code": "Verification code",
+                        "continue": "Continue",
+                        "didnt_receive_code": "Didn't receive code",
+                        "resend": "Resend"
+                    }
+                }
+            },
+            "messages": {
+                "auth": {
+                    "admin": {
+                        "not_found": "These credentials do not match our records.",
+                        "invalid": "Verification code is invalid.",
+                        "sent": "Verification code successfully sent."
+                    },
+                    "user": {
+                        "inactive": "Your account is not active. Please, contact the administrator.",
+                        "unauthorized": "Unauthorized",
+                        "sent": "Reset password link successfully sent.",
+                        "reset": "Your password has been successfully reset.",
+                        "failure": "Failure."
+                    }
+                },
+                "admins": {
+                    "not_found": "Admin not found.",
+                    "created": "Admin successfully created.",
+                    "updated": "Admin successfully updated.",
+                    "deleted": "Admin successfully deleted."
+                },
+                "users": {
+                    "not_found": "User not found.",
+                    "created": "User successfully created.",
+                    "updated": "User successfully updated.",
+                    "deleted": "User successfully deleted."
+                },
+                "roles": {
+                    "not_found": "Role not found.",
+                    "created": "Role successfully created.",
+                    "updated": "Role successfully updated.",
+                    "deleted": "Role successfully deleted."
+                },
+                "features": {
+                    "not_found": "Feature not found.",
+                    "created": "Feature successfully created.",
+                    "updated": "Feature successfully updated.",
+                    "deleted": "Feature successfully deleted."
+                },
+                "languages": {
+                    "not_found": "Language not found.",
+                    "created": "Language successfully created.",
+                    "updated": "Language successfully updated.",
+                    "deleted": "Language successfully deleted."
+                },
+                "notifications": {
+                    "not_found": "Notification not found."
+                },
+                "cms": {
+                    "not_found": "Content not found.",
+                    "updated": "Content successfully updated."
+                },
+                "settings": {
+                    "restaurant": "Restaurant settings successfully updated.",
+                    "account": "Account settings successfully updated.",
+                    "cms": "CMS settings successfully updated.",
+                    "calendar": "Calendar settings successfully updated.",
+                    "password": "Incorrect password.",
+                    "not_found": "Setting not found.",
+                    "created": "Setting successfully created.",
+                    "updated": "Setting successfully updated.",
+                    "deleted": "Setting successfully deleted."
+                },
+                "customers": {
+                    "not_found": "Customer not found.",
+                    "created": "Customer successfully created.",
+                    "updated": "Customer successfully updated.",
+                    "deleted": "Customer successfully deleted."
+                },
+                "projects": {
+                    "not_found": "Project not found.",
+                    "created": "Project successfully created.",
+                    "updated": "Project successfully updated.",
+                    "deleted": "Project successfully deleted.",
+                    "no_file": "No file added to the project."
+                },
+                "forms": {
+                    "not_found": "Form not found.",
+                    "created": "Form successfully created.",
+                    "updated": "Form successfully updated.",
+                    "deleted": "Form successfully deleted."
+                }
+            },
+            "backend": {
+                "header": {
+                    "id": "ID",
+                    "sign_out": "Sign out",
+                    "no_message": "No message",
+                    "no_notification": "No notification",
+                    "logout": "Logout",
+                    "close": "Close",
+                    "sure_logout": "Are you sure you want to logout",
+                    "you_have": "You have",
+                    "messages": "messages",
+                    "unread_message": "unread message",
+                    "unread_notification": "unread notification",
+                    "unread_messages": "unread messages",
+                    "unread_notifications": "unread notifications",
+                    "view_all_messages": "View all messages",
+                    "view_all_notifications": "View all notifications"
+                },
+                "footer": {
+                    "copyright": "Copyright",
+                    "all_rights": "All rights reserved by"
+                },
+                "sidebar": {
+                    "admin": "Administrator",
+                    "user": "User",
+                    "customer": "Customer",
+                    "menu": {
+                        "dashboard": "Dashboard",
+                        "admins": {
+                            "title": "Admins",
+                            "add": "Add admin",
+                            "index": "Admin list"
+                        },
+                        "users": {
+                            "title": "Users",
+                            "add": "Add user",
+                            "index": "User list"
+                        },
+                        "roles": {
+                            "title": "Roles",
+                            "add": "Add role",
+                            "index": "Role list"
+                        },
+                        "features": {
+                            "title": "Features",
+                            "add": "Add feature",
+                            "index": "Feature list"
+                        },
+                        "languages": {
+                            "title": "Languages",
+                            "add": "Add language",
+                            "index": "Language list"
+                        },
+                        "cms": {
+                            "title": "CMS",
+                            "global": "Global",
+                            "general": "General",
+                            "components": "Components",
+                            "auth": "Auth",
+                            "messages": "Messages",
+                            "backend": "Backend",
+                            "frontend": "Frontend"
+                        },
+                        "notifications": "Notifications",
+                        "settings": {
+                            "title": "Settings",
+                            "cms": "CMS",
+                            "language": "Language settings"
+                        },
+                        "customers": {
+                            "title": "Customers"
+                        },
+                        "projects": {
+                            "title": "Start Project",
+                            "create": "Create Project"
+                        },
+                        "files": {
+                            "title": "My Files & Status"
+                        },
+                        "my_report": {
+                            "title": "My Report"
+                        },
+                        "work_report": {
+                            "title": "Work Report"
+                        },
+                        "withdraw": {
+                            "title": "Withdraw"
+                        },
+                        "project_report": {
+                            "title": "Project Report"
+                        },
+                        "financial_report": {
+                            "title": "Financial Report"
+                        }
+                    }
+                },
+                "pages": {
+                    "dashboard": {
+                        "admin": {
+                            "title": "Admin panel",
+                            "subtitle": "Dashboard",
+                            "blocks": {
+                                "total_sales": "Total Sales",
+                                "total_income": "Total Income",
+                                "total_agencies": "Total Agencies",
+                                "available_balance": "Available Balance"
+                            }
+                        },
+                        "user": {
+                            "title": "User panel",
+                            "subtitle": "Dashboard",
+                            "blocks": {
+                                "total": "Total Submitted Forms",
+                                "approved": "Approved Forms",
+                                "project": "Project Status",
+                                "payment_in": "Payment in",
+                                "payment_out": "Payment out"
+                            },
+                            "general_report": {
+                                "title": "General Report",
+                                "subtitle": "General Report",
+                                "finance": "Finance",
+                                "work": "Work",
+                                "change_project": "Change Project",
+                                "approved": "Approved Forms",
+                                "rejected": "Rejected Forms",
+                                "total": "Total Completed Forms",
+                                "increase": "increase"
+                            },
+                            "ranking_board": {
+                                "title": "Ranking Board",
+                                "subtitle": "Best performances"
+                            }
+                        },
+                        "customer": {
+                            "title": "Dashboard",
+                            "subtitle": "Welcome ! Stay informed on latest updates.",
+                            "blocks": {
+                                "total": "Total Submitted Forms",
+                                "approved": "Approved Forms",
+                                "project": "Project Status",
+                                "balance": "Available Balance",
+                                "days_left": "days left"
+                            },
+                            "recent_forms": {
+                                "title": "Recent Forms",
+                                "all": "All",
+                                "approved": "Approved",
+                                "pending": "Pending",
+                                "available": "Available",
+                                "cancelled": "Cancelled",
+                                "view_list": "View list"
+                            },
+                            "data_overview": {
+                                "title": "Data Overview",
+                                "subtitle": "Check your performance",
+                                "total": "Total",
+                                "approved": "Approved",
+                                "pending": "Pending",
+                                "rejected": "Rejected"
+                            },
+                            "ranking_board": {
+                                "title": "Ranking Board",
+                                "subtitle": "Best performances"
+                            }
+                        }
+                    },
+                    "cms": {
+                        "title": "CMS",
+                        "global": "Global",
+                        "general": "General",
+                        "messages": "Messages",
+                        "frontend": "Frontend",
+                        "components": "Components",
+                        "backend": "Backend",
+                        "auth": "Auth",
+                        "form": {
+                            "logo": "Logo",
+                            "app_name": "App name",
+                            "company_name": "Company name"
+                        }
+                    },
+                    "admins": {
+                        "title": "Administrators",
+                        "add": "Add admin",
+                        "edit": "Edit admin",
+                        "index": "Admin list",
+                        "form": {
+                            "name": "Admin name",
+                            "full_name": "Full name",
+                            "phone": "Phone number",
+                            "password": "Password",
+                            "password_confirmation": "Confirm password",
+                            "email": "E-mail address",
+                            "admin_photo": "Admin photo",
+                            "photo": "Photo"
+                        }
+                    },
+                    "users": {
+                        "title": "Users",
+                        "add": "Add user",
+                        "edit": "Edit user",
+                        "index": "User list",
+                        "form": {
+                            "name": "User name",
+                            "full_name": "Full name",
+                            "phone": "Phone number",
+                            "password": "Password",
+                            "password_confirmation": "Confirm password",
+                            "email": "E-mail address",
+                            "role": "Role",
+                            "select_role": "Select role",
+                            "user_photo": "User photo",
+                            "photo": "Photo"
+                        }
+                    },
+                    "roles": {
+                        "title": "Roles",
+                        "add": "Add role",
+                        "edit": "Edit role",
+                        "index": "Role list",
+                        "form": {
+                            "name": "Name",
+                            "description": "Description",
+                            "features": "Features",
+                            "created_at": "Created at",
+                            "create": "Create",
+                            "update": "Update",
+                            "delete": "Delete"
+                        }
+                    },
+                    "features": {
+                        "title": "Features",
+                        "add": "Add feature",
+                        "edit": "Edit feature",
+                        "index": "Feature list",
+                        "form": {
+                            "name": "Name",
+                            "prefix": "Prefix",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "languages": {
+                        "title": "Languages",
+                        "add": "Add language",
+                        "edit": "Edit language",
+                        "index": "Language list",
+                        "form": {
+                            "name": "Name",
+                            "abbr": "Abbreviation",
+                            "flag": "Flag",
+                            "select_flag": "Select flag",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "notifications": {
+                        "title": "Notifications",
+                        "show": "Notification details",
+                        "index": "Notification list",
+                        "form": {
+                            "you_have_no_notification": "You have no notification."
+                        }
+                    },
+                    "settings": {
+                        "title": "Settings",
+                        "subtitle": "Account information & Financial settings",
+                        "form": {
+                            "user_account": {
+                                "title": "User Account Settings",
+                                "subtitle": "User Account Settings",
+                                "name": "Full Name",
+                                "email": "E-mail Address",
+                                "country": "Country",
+                                "city": "City",
+                                "address": "Address",
+                                "phone": "Mobile Phone No.",
+                                "select_country": "Select country"
+                            },
+                            "payment_method": {
+                                "title": "Payment Method Settings",
+                                "subtitle": "Setup your payout chanel",
+                                "mobile_money": {
+                                    "title": "Orange Money / MTN Momo",
+                                    "subtitle": "Only for Cameroon for now.",
+                                    "mobile_money_name": "Full Name",
+                                    "select_operator": "Select Operator",
+                                    "orange_money": "Orange Money",
+                                    "mtn_mobile_money": "MTN Mobile Money",
+                                    "mobile_money_phone": "Provide OM Number"
+                                },
+                                "paypal": {
+                                    "title": "Paypal Account",
+                                    "paypal_email": "Your PayPal Email"
+                                }
+                            },
+                            "profile_image": {
+                                "title": "Profile Image",
+                                "subtitle": "Upload image to change profile",
+                                "id": "ID"
+                            },
+                            "affiliate_link": {
+                                "title": "Affiliate Link",
+                                "subtitle": "Invite your friends these options",
+                                "share": "Share"
+                            },
+                            "accept_payment_methods": {
+                                "title": "Accepted Payment Methods",
+                                "subtitle": "Use only these payment gateways"
+                            }
+                        },
+                        "language": {
+                            "title": "Language settings",
+                            "form": {
+                                "select_language": "Select a language"
+                            }
+                        }
+                    },
+                    "projects": {
+                        "customer": {
+                            "title": "Start Project",
+                            "subtitle": "Select a project among the available below and start working.",
+                            "fill": "Please make sure you fill the form correctly before submitting",
+                            "form": {
+                                "project": "Project",
+                                "project_files": "Project Files",
+                                "search": "Search Form",
+                                "available": "Available",
+                                "booked": "Booked",
+                                "form_number": "Form Number",
+                                "company_code": "Company Code",
+                                "company_name": "Company Name",
+                                "company_address": "Company Address",
+                                "zip_code": "Zip Code",
+                                "fax": "Fax",
+                                "website": "Website",
+                                "email": "E-mail",
+                                "contact_no": "Contact No",
+                                "state": "State",
+                                "group": "Group",
+                                "read_this": "Read This",
+                                "submit_form": "Submit Form"
+                            }
+                        },
+                        "title": "Create Project",
+                        "subtitle": "Load Forms to every project",
+                        "add": "Create New Project",
+                        "edit": "Edit Project",
+                        "upload": "Upload files to create new project",
+                        "index": "Project List",
+                        "create_or_manage": "Create or Manage Forms",
+                        "new_project": "New Project",
+                        "form": {
+                            "created_at": "Uploaded Date",
+                            "name": "Project Name",
+                            "total_forms": "Total Forms",
+                            "submitted": "Submitted",
+                            "approved": "Approved",
+                            "pending": "Pending",
+                            "rejected": "Rejected",
+                            "status": "Status",
+                            "completed": "Completed",
+                            "click_to_upload": "Click to upload files or drag and drop",
+                            "maximum_file_size": "Maximum file size allowed { 500 MB }",
+                            "files_being_uploaded": "Your files are being uploaded, please wait...",
+                            "files_uploaded": "Files uploaded successfully",
+                            "click_on_project_list": "Click on Project List button above to view"
+                        }
+                    },
+                    "files": {
+                        "title": "My Files & Status",
+                        "subtitle": "Check your files and status",
+                        "form": {
+                            "project": "Project",
+                            "project_files": "Project Files",
+                            "search": "Search Form",
+                            "all": "All",
+                            "pending": "Pending",
+                            "approved": "Approved",
+                            "reserved": "Reserved",
+                            "rejected": "Rejected"
+                        }
+                    },
+                    "my_report": {
+                        "title": "My Report",
+                        "subtitle": "Get all information on work & Financial report",
+                        "form": {
+                            "blocks": {
+                                "total": "Total Submitted Forms",
+                                "approved": "Approved Forms",
+                                "rejected": "Rejected Forms",
+                                "accuracy": "Accuracy Rate",
+                                "average": "Average"
+                            },
+                            "project_report": {
+                                "title": "Project Report",
+                                "subtitle": "All your completed projects will be listed here",
+                                "search": "Search",
+                                "project": "Project",
+                                "report": "Report",
+                                "submitted_forms": "Submitted Forms",
+                                "approved_forms": "Approved Forms",
+                                "rejected_forms": "Rejected Forms",
+                                "expected_payment": "Expected Payment",
+                                "payment": {
+                                    "pending": "Pending Payment",
+                                    "completed": "Payment Completed"
+                                }
+                            },
+                            "general_work_report": {
+                                "title": "General Work Report",
+                                "subtitle": "General Work Report",
+                                "weekly": "Weekly",
+                                "monthly": "Monthly",
+                                "change_report": "Change Report",
+                                "total": "Total Completed Forms",
+                                "approved": "Approved Forms",
+                                "rejected": "Rejected Forms",
+                                "forms": "Forms",
+                                "increase": "increase"
+                            },
+                            "financial_report": {
+                                "title": "Financial Report",
+                                "subtitle": "Financial Report",
+                                "balance": "Balance",
+                                "withdraw": "Withdraw",
+                                "available_balance": "Available Balance",
+                                "withdrawals": "Withdrawals"
+                            },
+                            "work_report": {
+                                "title": "Work Report",
+                                "subtitle": "Use the filter button for more.",
+                                "approved": "Approved",
+                                "pending": "Pending",
+                                "rejected": "Rejected"
+                            }
+                        }
+                    },
+                    "work_report": {
+                        "title": "Project Report",
+                        "subtitle": "Check your work report for the selected project",
+                        "form": {
+                            "project": "Project",
+                            "report": "Report",
+                            "search": "Search Form",
+                            "submitted_forms": "Submitted Forms",
+                            "approved_forms": "Approved Forms",
+                            "rejected_forms": "Rejected Forms",
+                            "expected_payment": "Expected Payment",
+                            "payment": {
+                                "pending": "Pending Payment",
+                                "completed": "Payment Completed"
+                            }
+                        }
+                    },
+                    "withdraw": {
+                        "title": "Withdraw",
+                        "subtitle": "Withdrawal requests & History",
+                        "form": {
+                            "withdrawal_history": {
+                                "title": "Withdrawal History",
+                                "subtitle": "Add or Manage Withdrawals",
+                                "search": "Search",
+                                "withdraw": "Withdraw",
+                                "date": "Date",
+                                "method": "Payment Method",
+                                "amount": "Amount",
+                                "balance_before": "Bal. Before",
+                                "balance_after": "Bal. After",
+                                "location": "Location",
+                                "status": "Status"
+                            },
+                            "available_balance": {
+                                "title": "Av. Balance",
+                                "subtitle": "Account Usable Balance",
+                                "balance": "Balance",
+                                "available_balance": "Available Balance",
+                                "withdrawals": "Withdrawals"
+                            },
+                            "quick_withdraw": {
+                                "title": "Quick Withdraw",
+                                "subtitle": "Withdrawal in no time. Check out",
+                                "amount": "Amount",
+                                "method": "Payment Method",
+                                "select_method": "Select Method",
+                                "otp": "Input OTP",
+                                "get_code": "Get Code",
+                                "submit_request": "Submit Request"
+                            }
+                        }
+                    }
+                }
+            },
+            "frontend": {}
+        }
+    }
+}

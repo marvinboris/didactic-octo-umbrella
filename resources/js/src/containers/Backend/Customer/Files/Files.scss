@@ -1,0 +1,41 @@
+.Backend.Customer .Files>.content {
+    padding: 0 34px;
+
+    section.files-status {
+        margin: 64px 0;
+
+        .header {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 24px 32px;
+            margin-bottom: 40px;
+            display: flex;
+
+            .filter {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-grow: 1;
+                font-size: 16px;
+
+                .option {
+                    cursor: pointer;
+                    font-weight: 400;
+                    transition: all .25s;
+
+                    &.active {
+                        font-weight: 700;
+                    }
+                }
+
+                .line {
+                    width: 2px;
+                    height: 30px;
+                    margin: 0 21px;
+                    border-radius: 1px;
+                    background-color: var(--border);
+                }
+            }
+        }
+    }
+}

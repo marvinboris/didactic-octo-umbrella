@@ -1,0 +1,35 @@
+.Auth.Customer.Layout {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-image: url('/images/customer-auth-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--border);
+    font-size: 18px;
+}
+
+.Auth.Customer.Layout header {
+    padding: 59px 0;
+}
+
+.Auth.Customer.Layout main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Auth.Customer.Layout footer {
+    border-top: .25px solid var(--border-20);
+    color: var(--border);
+    text-align: center;
+    padding: 30px 0 22px 0;
+}
+
+.Auth.Customer.Layout footer .special {
+    color: var(--green);
+    font-weight: 700;
+}

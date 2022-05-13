@@ -1,0 +1,59 @@
+.Backend.Customer .Dashboard {
+    display: flex;
+
+    .left-content {
+        padding: 62px 34px;
+    }
+
+    .right-content {
+        width: 430px;
+        flex: 0 0 430px;
+        background-color: var(--white);
+        display: flex;
+        flex-direction: column;
+        top: 94px;
+        position: sticky;
+        height: calc(100vh - 94px);
+
+        .data-overview {
+            padding: 41px 53px 64px 27px;
+            border-top: 1px solid var(--border-10);
+        }
+
+        .ranking-board {
+            padding: 28px 53px 64px 27px;
+            background-color: var(--border-5);
+            border-left: 1px solid var(--border-10);
+        }
+    }
+
+    .recent-forms .header {
+        background-color: var(--white);
+        border-radius: 15px;
+        padding: 24px 32px;
+        margin-bottom: 40px;
+    }
+
+    .RecentFormGroup>div {
+        cursor: pointer;
+        font-size: 16px;
+        padding: 0 16px;
+        margin: 0 4px;
+        transition: all .25s;
+
+        &.active {
+            font-weight: 700;
+            color: var(--green);
+            padding: 8px 24px;
+            border-radius: 8px;
+            background-color: var(--green-10);
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .Backend.Customer .Dashboard .wrapper {
+        margin-left: var(--app-sidebar-width);
+        width: calc(100% - var(--app-sidebar-width));
+    }
+}

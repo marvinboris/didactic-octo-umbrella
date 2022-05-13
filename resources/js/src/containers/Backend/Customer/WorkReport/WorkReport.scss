@@ -1,0 +1,50 @@
+.Backend.Customer .WorkReport>.content {
+    padding: 0 34px;
+
+    section.work-report {
+        margin: 64px 0;
+
+        .header {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 24px 32px;
+            margin-bottom: 40px;
+            display: flex;
+
+            .payment {
+                font-size: 14px;
+                border-radius: 8px;
+                padding: 7px 14px 10px 10px;
+
+                i {
+                    margin-left: 6px;
+                }
+            }
+        }
+
+        .filter {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            margin-left: 42px;
+            border-radius: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .Stat {
+        text-align: center;
+        margin: 0 27px;
+
+        .text {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .value {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+}

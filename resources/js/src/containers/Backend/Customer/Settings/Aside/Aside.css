@@ -1,0 +1,31 @@
+.Backend.Customer .Settings .Aside {
+    border-radius: 30px;
+    margin-bottom: 26px;
+    padding: 29px 31px 35px 24px;
+    background-color: var(--white);
+}
+
+.Backend.Customer .Settings .Aside .header {
+    display: flex;
+}
+
+.Backend.Customer .Settings .Aside .header .title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Backend.Customer .Settings .Aside .header .title i {
+    font-size: 20px;
+    margin-left: 11px;
+    color: var(--green);
+}
+
+.Backend.Customer .Settings .Aside .header .subtitle {
+    font-size: 14px;
+}
+
+.Backend.Customer .Settings .Aside .header .green-line {
+    width: 39px;
+    height: 5px;
+    border-radius: 2.5px;
+}

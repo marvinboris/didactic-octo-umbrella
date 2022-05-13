@@ -1,0 +1,23 @@
+.Backend.Customer .Projects>.content {
+    padding: 0 34px;
+
+    section.projects {
+        margin: 40px -24px;
+    }
+
+    section.project-files .header {
+        background-color: var(--white);
+        border-radius: 15px;
+        padding: 24px 32px;
+        margin-bottom: 40px;
+        display: flex;
+
+        .line {
+            width: 2px;
+            height: 30px;
+            margin: 0 21px;
+            border-radius: 1px;
+            background-color: var(--border);
+        }
+    }
+}

@@ -1,0 +1,210 @@
+.Backend.Customer .Projects.Forms>.row {
+    margin: 0;
+
+    .left-content {
+        padding: 45px 72px;
+        background-color: var(--white);
+        border: .5px solid var(--border-50);
+
+        .header {
+            display: flex;
+            margin-bottom: 27px;
+            align-items: center;
+
+            .group {
+                padding: 17px;
+                font-size: 20px;
+                font-weight: 500;
+                border-radius: 8px;
+                margin-right: 22px;
+                color: var(--border-75);
+                background-color: var(--border-20);
+
+                i {
+                    font-size: 12px;
+                    margin-left: 12.5px;
+                }
+            }
+
+            .form {
+                font-size: 25px;
+                font-weight: 700;
+            }
+
+            .errors {
+                cursor: pointer;
+                color: var(--red);
+                margin-left: auto;
+                border-radius: 8px;
+                align-self: flex-end;
+                background-color: var(--red-10);
+            }
+
+            .errors i {
+                font-size: 15px;
+                margin-right: 15px;
+            }
+        }
+
+        .bar-progress {
+            height: 28px;
+            position: relative;
+            margin-bottom: 57px;
+
+            .gray-line {
+                left: 0;
+                top: 50%;
+                height: 1px;
+                width: 100%;
+                position: absolute;
+                transform: translateY(-50%);
+                background-color: var(--border-20);
+            }
+
+            .bar {
+                left: 0;
+                top: 50%;
+                position: absolute;
+                transform: translateY(-50%);
+                transition: all .25s;
+
+                .green-line {
+                    height: 8px;
+                    width: 100%;
+                    border-radius: 4px;
+                }
+
+                .circle {
+                    top: 50%;
+                    right: 0;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    position: absolute;
+                    border: 5px solid var(--lightgreen);
+                    background-color: var(--white);
+                    transform: translate(50%, -50%);
+                }
+
+                .info {
+                    top: 50%;
+                    right: -67px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    padding: 3px 6px;
+                    border-radius: 6px;
+                    position: absolute;
+                    color: var(--white);
+                    transform: translateY(-50%);
+                    background-color: var(--green);
+
+                    &::after {
+                        top: 50%;
+                        left: 1px;
+                        content: "";
+                        position: absolute;
+                        transform: translate(-100%, -50%);
+                        border-top: 5px solid transparent;
+                        border-bottom: 5px solid transparent;
+                        border-right: 5px solid var(--green);
+                    }
+                }
+            }
+        }
+
+        .pages-wrapper {
+            text-align: center;
+
+            .pages {
+                padding: 15px;
+                margin-top: 74px;
+                margin-bottom: 46px;
+                border-radius: 29.4px;
+                display: inline-block;
+                background-color: var(--green-20);
+
+                span {
+                    cursor: pointer;
+                }
+
+                .direction {
+                    width: 38px;
+                    height: 38px;
+                    font-size: 12px;
+                    border-radius: 50%;
+                    color: var(--white);
+                    align-items: center;
+                    display: inline-flex;
+                    justify-content: center;
+                    background-color: var(--green);
+
+                    &.inactive {
+                        color: var(--border);
+                        background-color: var(--green-20);
+                    }
+
+                    &.left {
+                        margin-right: 8px;
+                    }
+
+                    &.right {
+                        margin-left: 8px;
+                    }
+                }
+
+                .page {
+                    margin: 0 8px;
+                    font-weight: 400;
+                    transition: all .25s;
+                    color: var(--border-30);
+
+                    &.active {
+                        font-weight: 700;
+                        color: var(--green);
+                    }
+                }
+            }
+        }
+    }
+
+    .right-content {
+        padding: 79px 54px;
+
+        .image {
+            padding: 25px 29px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            background-color: var(--blue-5);
+
+            .zoom {
+                margin-top: 27px;
+                text-align: center;
+
+                button {
+                    width: 36px;
+                    height: 36px;
+                    font-size: 14px;
+                    border-radius: 50%;
+                    align-items: center;
+                    display: inline-flex;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .submit {
+            font-size: 16px;
+            font-weight: 700;
+            padding: 20px 20px;
+            align-items: center;
+            border-radius: 10px;
+            display: inline-flex;
+
+            i {
+                font-size: 19px;
+                margin-left: 10px;
+                color: var(--border-20);
+            }
+        }
+    }
+}

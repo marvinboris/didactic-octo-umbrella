@@ -1,0 +1,44 @@
+.UI.Form {
+    border-radius: 30px;
+    padding: 48px 69px 101px 69px;
+    background-color: var(--white);
+}
+
+.UI.Form .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 86px;
+    justify-content: space-between;
+}
+
+.UI.Form .header .title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.UI.Form .header .subtitle {
+    font-size: 16px;
+    margin-bottom: 21px;
+}
+
+.UI.Form .header .green-line {
+    width: 46px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--green);
+}
+
+.UI.Form .header .link {
+    text-decoration: none;
+}
+
+.UI.Form .header .link button {
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 19px 33px 18px 24.75px;
+}
+
+.UI.Form .header .link button i {
+    margin-right: 18.25px;
+}

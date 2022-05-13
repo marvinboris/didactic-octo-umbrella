@@ -1,0 +1,169 @@
+.Backend.User .Dashboard section {
+    border-radius: 30px;
+    margin-bottom: 41px;
+    padding: 29px 81px 67px 56px;
+    background-color: var(--white);
+}
+
+.Backend.User .Dashboard section .header {
+    display: flex;
+    margin-bottom: 49px;
+    align-items: flex-end;
+}
+
+.Backend.User .Dashboard section .header .icon,
+.Backend.User .Dashboard .general-report .icon {
+    font-size: 24px;
+    padding: 8px 9px;
+    margin-right: 17px;
+    color: var(--green);
+    align-self: flex-start;
+}
+
+.Backend.User .Dashboard section .header .title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.Backend.User .Dashboard section .header .title i {
+    font-size: 20px;
+    margin-left: 12px;
+    color: var(--green);
+}
+
+.Backend.User .Dashboard section .header .subtitle {
+    margin-bottom: 29px;
+    font-size: 14px;
+}
+
+.Backend.User .Dashboard section .header .green-line {
+    width: 46px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--green);
+}
+
+.Backend.User .Dashboard section .header input,
+.Backend.User .Dashboard section .header select {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 22px 37px;
+    border-radius: 10px;
+    color: var(--border);
+    background-color: var(--green-10);
+}
+
+.Backend.User .Dashboard section .header select {
+    padding: 14px 16px;
+}
+
+.Backend.User .Dashboard section .header .withdraw {
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 16px 30px 21px 21px;
+}
+
+.Backend.User .Dashboard aside {
+    border-radius: 30px;
+    margin-bottom: 26px;
+    padding: 29px 46px 35px 24px;
+    background-color: var(--white);
+}
+
+.Backend.User .Dashboard aside .header {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.Backend.User .Dashboard aside .header .title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Backend.User .Dashboard aside .header .title i {
+    font-size: 20px;
+    margin-left: 11px;
+    color: var(--green);
+}
+
+.Backend.User .Dashboard aside .header .subtitle {
+    font-size: 14px;
+}
+
+.Backend.User .Dashboard aside .header .green-line {
+    width: 39px;
+    height: 5px;
+    border-radius: 2.5px;
+}
+
+.Backend.User .Dashboard .general-report {
+    display: flex;
+    height: 100%;
+    padding: 24px 29px 50px 45px;
+}
+
+.Backend.User .Dashboard .general-report .icon {
+    font-size: 54px;
+    margin-right: 20px;
+}
+
+.Backend.User .Dashboard .general-report .header {
+    align-items: center;
+    margin-bottom: 34px;
+}
+
+.Backend.User .Dashboard .general-report .header .periods {
+    display: flex;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+.Backend.User .Dashboard .general-report .header .periods i {
+    font-size: 24px;
+    margin-right: 21px;
+}
+
+.Backend.User .Dashboard .general-report .header .periods .finance {
+    margin-right: 41px;
+}
+
+.Backend.User .Dashboard .general-report .header .periods .work {
+    margin-right: 46px;
+}
+
+.Backend.User .Dashboard .general-report .body .total {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--green);
+}
+
+.Backend.User .Dashboard .general-report .body .increase {
+    padding: 4px 14px;
+    margin-left: 12px;
+    border-radius: 6px;
+    color: var(--green);
+    background-color: var(--green-20);
+}
+
+.Backend.User .Dashboard .general-report .body .increase .value {
+    font-weight: 700;
+}
+
+.Backend.User .Dashboard .general-report .body .general-report-tracker {
+    height: 322px;
+}
+
+.Backend.User .Dashboard .ranking-board {
+    height: 100%;
+    padding: 35px 53px 70px 39px;
+    background-color: var(--green-10);
+}
+
+@media (min-width: 768px) {
+    .Backend.User .Dashboard .wrapper {
+        margin-left: var(--app-sidebar-width);
+        width: calc(100% - var(--app-sidebar-width));
+    }
+}

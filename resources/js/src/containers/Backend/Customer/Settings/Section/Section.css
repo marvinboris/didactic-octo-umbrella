@@ -1,0 +1,49 @@
+.Backend.Customer .Settings .Section {
+    display: flex;
+    border-radius: 30px;
+    margin-bottom: 41px;
+    padding: 33px 46px 66px 46px;
+    background-color: var(--white);
+}
+
+.Backend.Customer .Settings .Section .icon {
+    font-size: 24px;
+    padding: 8px 9px;
+    margin-right: 17px;
+    color: var(--green);
+}
+
+.Backend.Customer .Settings .Section .header .title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.Backend.Customer .Settings .Section .header .title i {
+    font-size: 20px;
+    margin-left: 28px;
+    color: var(--green);
+}
+
+.Backend.Customer .Settings .Section .header .subtitle {
+    margin-bottom: 29px;
+    font-size: 14px;
+}
+
+.Backend.Customer .Settings .Section .header .green-line {
+    width: 46px;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 47px;
+    background-color: var(--green);
+}
+
+.Backend.Customer .Settings .Section .edit {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    margin-left: 93px;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+}

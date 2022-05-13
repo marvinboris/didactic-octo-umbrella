@@ -1,0 +1,46 @@
+.Backend.Customer {
+    .main {
+        padding-left: var(--app-sidebar-width);
+        color: var(--border);
+        min-height: 100vh;
+        background-color: var(--soft);
+
+        .sticky-top {
+            display: flex;
+            background-color: var(--white);
+
+            &>.d-flex {
+                padding: 26px 86px 21px 34px;
+            }
+
+            .user-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 430px;
+                padding: 0 33px;
+                border-left: 1px solid var(--border-20);
+
+                .name {
+                    font-weight: 700;
+                    margin-bottom: 13px;
+                }
+
+                .token {
+                    color: var(--green);
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .profile-pic {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+        }
+    }
+
+    main>div>.content {
+        padding: 46px 34px;
+    }
+}

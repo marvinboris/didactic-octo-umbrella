@@ -1,0 +1,41 @@
+.Frontend .Home .carousel-inner {
+    height: 100% !important;
+}
+
+.Frontend .Home #banner {
+    position: absolute;
+    margin: auto;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%) scale(1);
+    transform-origin: center;
+    padding: 0 12.5%;
+}
+
+.Frontend .Home .txt-block img {
+    transform: translateX(-100%);
+}
+
+.Frontend .Home .owl-item {
+    padding: 1rem 0;
+}
+
+.Frontend .Home .owl-item > div {
+    transform: scale(1);
+    transition: all 0.25s;
+}
+
+.Frontend .Home .owl-item.center.active > div {
+    transform: scale(1.02);
+}
+
+@media screen and (max-width: 992px) {
+    .Frontend .Home .banner {
+        min-height: auto;
+    }
+
+    .Frontend .Home .txt-block img {
+        transform: translateX(-200%);
+    }
+}
