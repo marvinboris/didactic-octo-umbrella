@@ -902,6 +902,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "text",
                 onChange: this.inputChangeHandler,
+                id: "form-0-form_number",
                 name: "form[0][form_number]",
                 value: this.fieldValue(0, 'form_number'),
                 label: form.form_number
@@ -909,6 +910,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "text",
                 onChange: this.inputChangeHandler,
+                id: "form-0-company_code",
                 name: "form[0][company_code]",
                 value: this.fieldValue(0, 'company_code'),
                 label: form.company_code
@@ -916,6 +918,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "textarea",
                 onChange: this.inputChangeHandler,
+                id: "form-0-company_name",
                 name: "form[0][company_name]",
                 value: this.fieldValue(0, 'company_name'),
                 label: form.company_name
@@ -923,6 +926,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "textarea",
                 onChange: this.inputChangeHandler,
+                id: "form-0-company_address",
                 name: "form[0][company_address]",
                 value: this.fieldValue(0, 'company_address'),
                 label: form.company_address
@@ -930,6 +934,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "text",
                 onChange: this.inputChangeHandler,
+                id: "form-0-zip_code",
                 name: "form[0][zip_code]",
                 value: this.fieldValue(0, 'zip_code'),
                 label: form.zip_code
@@ -937,6 +942,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "text",
                 onChange: this.inputChangeHandler,
+                id: "form-0-fax",
                 name: "form[0][fax]",
                 value: this.fieldValue(0, 'fax'),
                 label: form.fax
@@ -944,6 +950,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "text",
                 onChange: this.inputChangeHandler,
+                id: "form-0-website",
                 name: "form[0][website]",
                 value: this.fieldValue(0, 'website'),
                 label: form.website
@@ -951,6 +958,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "email",
                 onChange: this.inputChangeHandler,
+                id: "form-0-email",
                 name: "form[0][email]",
                 value: this.fieldValue(0, 'email'),
                 label: form.email
@@ -958,6 +966,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "text",
                 onChange: this.inputChangeHandler,
+                id: "form-0-contact_no",
                 name: "form[0][contact_no]",
                 value: this.fieldValue(0, 'contact_no'),
                 label: form.contact_no
@@ -965,6 +974,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "text",
                 onChange: this.inputChangeHandler,
+                id: "form-0-state",
                 name: "form[0][state]",
                 value: this.fieldValue(0, 'state'),
                 label: form.state
@@ -975,6 +985,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "text",
                 onChange: this.inputChangeHandler,
+                id: "form-1-product",
                 name: "form[1][product]",
                 value: this.fieldValue(1, 'product'),
                 label: form.product
