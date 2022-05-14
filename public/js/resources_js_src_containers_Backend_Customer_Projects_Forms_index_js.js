@@ -755,6 +755,9 @@ var Index = /*#__PURE__*/function (_Component) {
           if (!!responseText) {
             var _data = JSON.parse(responseText);
 
+            console.log({
+              data: _data
+            });
             var resultBody = [{}, {}, {}];
             var fieldsPerLine = [['form_number', 'company_code', 'company_name', 'company_address', 'zip_code', 'fax', 'website', 'email', 'contact_no', 'state'], [], []];
 
