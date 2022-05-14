@@ -110,71 +110,7 @@ class Index extends Component {
         new ImageZoom(document.getElementById("img-container"), options);
     }
 
-    initMicrosoftOcr = imageUrl => {
-        const options = {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                'X-RapidAPI-Host': 'microsoft-computer-vision3.p.rapidapi.com',
-                'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
-            },
-            body: '{"url":"' + imageUrl + '"}'
-        };
-
-        fetch('https://microsoft-computer-vision3.p.rapidapi.com/analyze?language=en&descriptionExclude%5B0%5D=Celebrities&visualFeatures%5B0%5D=ImageType&details%5B0%5D=Celebrities', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-    }
-
-    loadImage = imageUrl => {
-        const request = new XMLHttpRequest();
-        request.responseType = "blob";
-        request.onload = () => this.initVinOcr(request.response);
-        request.open("GET", imageUrl);
-        request.send();
-    }
-
-    initVinOcr = imageFile => {
-        const data = new FormData();
-        data.append("imageFile", imageFile);
-
-        const options = {
-            method: 'POST',
-            headers: {
-                'X-RapidAPI-Host': 'vin-recognition.p.rapidapi.com',
-                'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
-            },
-            body: data
-        };
-
-        fetch('https://vin-recognition.p.rapidapi.com/v2', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-    }
-
-    initOcrApi = imageUrl => {
-        const encodedParams = new URLSearchParams();
-        encodedParams.append("url", imageUrl);
-
-        const options = {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/x-www-form-urlencoded',
-                'X-RapidAPI-Host': 'ocr43.p.rapidapi.com',
-                'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
-            },
-            body: encodedParams
-        };
-
-        fetch('https://ocr43.p.rapidapi.com/v1/results', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-    }
-
-    initNanonetsApi = imageUrl => {
+    initNanonetsApi = (imageUrl, callback) => {
         const data = 'urls=' + imageUrl;
         const model_id = '5b1f9938-5dce-43ee-99ac-50a15a9d4444';
 
@@ -182,7 +118,21 @@ class Index extends Component {
 
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
-                console.log(this.responseText);
+                const responseText = this.responseText;
+                if (!!responseText) {
+                    const data = JSON.parse(responseText);
+                    const resultBody = [{}, {}, {}];
+                    const fieldsPerLine = [
+                        ['form_number', 'company_code', 'company_name', 'company_address', 'zip_code', 'fax', 'website', 'email', 'contact_no', 'state'],
+                        [],
+                        []
+                    ]
+                    data.result.prediction.map(line => {
+                        const lineIndex = fieldsPerLine.find(fields => fields.includes(line.label));
+                        resultBody[lineIndex][line.label] = line.ocr_text;
+                        callback(resultBody);
+                    });
+                }
             }
         });
 
@@ -210,10 +160,7 @@ class Index extends Component {
                 const progress = Math.round(filledFields.length * 100 / allFields.length);
 
                 this.initImageZoom();
-                // this.initMicrosoftOcr(form.file);
-                // this.loadImage(form.file);
-                // this.initOcrApi(form.file);
-                this.initNanonetsApi(form.file);
+                if (!form.body) this.initNanonetsApi(form.file, body => this.setState({ body }));
 
                 this.setState({ progress });
             });

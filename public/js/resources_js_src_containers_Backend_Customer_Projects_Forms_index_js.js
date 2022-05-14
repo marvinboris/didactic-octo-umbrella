@@ -744,85 +744,28 @@ var Index = /*#__PURE__*/function (_Component) {
       new (js_image_zoom__WEBPACK_IMPORTED_MODULE_2___default())(document.getElementById("img-container"), options);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "initMicrosoftOcr", function (imageUrl) {
-      var options = {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          'X-RapidAPI-Host': 'microsoft-computer-vision3.p.rapidapi.com',
-          'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
-        },
-        body: '{"url":"' + imageUrl + '"}'
-      };
-      fetch('https://microsoft-computer-vision3.p.rapidapi.com/analyze?language=en&descriptionExclude%5B0%5D=Celebrities&visualFeatures%5B0%5D=ImageType&details%5B0%5D=Celebrities', options).then(function (response) {
-        return response.json();
-      }).then(function (response) {
-        return console.log(response);
-      })["catch"](function (err) {
-        return console.error(err);
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "loadImage", function (imageUrl) {
-      var request = new XMLHttpRequest();
-      request.responseType = "blob";
-
-      request.onload = function () {
-        return _this.initVinOcr(request.response);
-      };
-
-      request.open("GET", imageUrl);
-      request.send();
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "initVinOcr", function (imageFile) {
-      var data = new FormData();
-      data.append("imageFile", imageFile);
-      var options = {
-        method: 'POST',
-        headers: {
-          'X-RapidAPI-Host': 'vin-recognition.p.rapidapi.com',
-          'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
-        },
-        body: data
-      };
-      fetch('https://vin-recognition.p.rapidapi.com/v2', options).then(function (response) {
-        return response.json();
-      }).then(function (response) {
-        return console.log(response);
-      })["catch"](function (err) {
-        return console.error(err);
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "initOcrApi", function (imageUrl) {
-      var encodedParams = new URLSearchParams();
-      encodedParams.append("url", imageUrl);
-      var options = {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/x-www-form-urlencoded',
-          'X-RapidAPI-Host': 'ocr43.p.rapidapi.com',
-          'X-RapidAPI-Key': '6ce92d4e5dmsh598d92a451c175ep1360c5jsn7348a06ad241'
-        },
-        body: encodedParams
-      };
-      fetch('https://ocr43.p.rapidapi.com/v1/results', options).then(function (response) {
-        return response.json();
-      }).then(function (response) {
-        return console.log(response);
-      })["catch"](function (err) {
-        return console.error(err);
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "initNanonetsApi", function (imageUrl) {
+    _defineProperty(_assertThisInitialized(_this), "initNanonetsApi", function (imageUrl, callback) {
       var data = 'urls=' + imageUrl;
       var model_id = '5b1f9938-5dce-43ee-99ac-50a15a9d4444';
       var xhr = new XMLHttpRequest();
       xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-          console.log(this.responseText);
+          var responseText = this.responseText;
+
+          if (!!responseText) {
+            var _data = JSON.parse(responseText);
+
+            var resultBody = [{}, {}, {}];
+            var fieldsPerLine = [['form_number', 'company_code', 'company_name', 'company_address', 'zip_code', 'fax', 'website', 'email', 'contact_no', 'state'], [], []];
+
+            _data.result.prediction.map(function (line) {
+              var lineIndex = fieldsPerLine.find(function (fields) {
+                return fields.includes(line.label);
+              });
+              resultBody[lineIndex][line.label] = line.ocr_text;
+              callback(resultBody);
+            });
+          }
         }
       });
       xhr.open("POST", "https://app.nanonets.com/api/v2/OCR/Model/" + model_id + "/LabelUrls/");
@@ -855,12 +798,13 @@ var Index = /*#__PURE__*/function (_Component) {
 
           var progress = Math.round(filledFields.length * 100 / allFields.length);
 
-          _this2.initImageZoom(); // this.initMicrosoftOcr(form.file);
-          // this.loadImage(form.file);
-          // this.initOcrApi(form.file);
+          _this2.initImageZoom();
 
-
-          _this2.initNanonetsApi(form.file);
+          if (!form.body) _this2.initNanonetsApi(form.file, function (body) {
+            return _this2.setState({
+              body: body
+            });
+          });
 
           _this2.setState({
             progress: progress
