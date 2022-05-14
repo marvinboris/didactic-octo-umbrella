@@ -149,10 +149,12 @@ class Index extends Component {
 
     // Lifecycle components
     componentDidMount() {
+        console.log('componentDidMount');
         this.props.get(this.props.match.params.projectNumber, this.props.match.params.formNumber);
     }
 
     componentDidUpdate(prevProps) {
+        console.log('componentDidUpdate');
         if (!prevProps.backend.projects.form && this.props.backend.projects.form) {
             const { backend: { projects: { form } } } = this.props;
             this.setState({ ...form }, () => {
@@ -164,10 +166,12 @@ class Index extends Component {
     }
 
     componentWillUnmount() {
+        console.log('componentWillUnmount');
         this.props.reset();
     }
 
     render() {
+        console.log('render');
         const {
             content: {
                 cms: {

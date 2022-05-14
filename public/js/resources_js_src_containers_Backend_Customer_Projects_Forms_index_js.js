@@ -785,12 +785,15 @@ var Index = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: // Lifecycle components
     function componentDidMount() {
+      console.log('componentDidMount');
       this.props.get(this.props.match.params.projectNumber, this.props.match.params.formNumber);
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var _this2 = this;
+
+      console.log('componentDidUpdate');
 
       if (!prevProps.backend.projects.form && this.props.backend.projects.form) {
         var form = this.props.backend.projects.form;
@@ -810,6 +813,7 @@ var Index = /*#__PURE__*/function (_Component) {
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
+      console.log('componentWillUnmount');
       this.props.reset();
     }
   }, {
@@ -817,6 +821,7 @@ var Index = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this3 = this;
 
+      console.log('render');
       var _this$props = this.props,
           _this$props$content$c = _this$props.content.cms.pages.backend.pages.projects.customer,
           title = _this$props$content$c.title,
