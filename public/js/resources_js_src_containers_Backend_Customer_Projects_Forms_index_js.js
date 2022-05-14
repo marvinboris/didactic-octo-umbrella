@@ -755,19 +755,19 @@ var Index = /*#__PURE__*/function (_Component) {
           if (!!responseText) {
             var _data = JSON.parse(responseText);
 
-            console.log({
-              data: _data
-            });
             var resultBody = [{}, {}, {}];
             var fieldsPerLine = [['form_number', 'company_code', 'company_name', 'company_address', 'zip_code', 'fax', 'website', 'email', 'contact_no', 'state'], [], []];
 
-            _data.result.prediction.map(function (line) {
-              var lineIndex = fieldsPerLine.find(function (fields) {
-                return fields.includes(line.label);
+            _data.result.forEach(function (page) {
+              return page.prediction.map(function (line) {
+                var lineIndex = fieldsPerLine.find(function (fields) {
+                  return fields.includes(line.label);
+                });
+                resultBody[lineIndex][line.label] = line.ocr_text;
               });
-              resultBody[lineIndex][line.label] = line.ocr_text;
-              callback(resultBody);
             });
+
+            callback(resultBody);
           }
         }
       });

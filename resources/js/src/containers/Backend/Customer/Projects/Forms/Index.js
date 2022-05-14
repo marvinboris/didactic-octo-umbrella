@@ -130,8 +130,8 @@ class Index extends Component {
                     data.result.forEach(page => page.prediction.map(line => {
                         const lineIndex = fieldsPerLine.find(fields => fields.includes(line.label));
                         resultBody[lineIndex][line.label] = line.ocr_text;
-                        callback(resultBody);
                     }));
+                    callback(resultBody);
                 }
             }
         });
