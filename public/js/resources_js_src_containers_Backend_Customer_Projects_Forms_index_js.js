@@ -979,7 +979,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 type: "text",
                 onChange: this.inputChangeHandler,
                 name: "form[1][product]",
-                value: this.fieldValue(0, 'product'),
+                value: this.fieldValue(1, 'product'),
                 label: form.product
               })
             })]

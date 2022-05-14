@@ -229,7 +229,7 @@ class Index extends Component {
                     </div>}
                     
                     {<div className={'row' + (page === 1 ? "" : " d-none")}>
-                        <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name="form[1][product]" value={this.fieldValue(0, 'product')} label={form.product} />
+                        <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name="form[1][product]" value={this.fieldValue(1, 'product')} label={form.product} />
                     </div>}
                 </form>
 
