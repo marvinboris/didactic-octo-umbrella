@@ -54,16 +54,18 @@ class Index extends Component {
         if (newBody.indexOf(groupIndex) === -1) newBody.push({ [fieldKey]: '' });
         const formerValue = newBody[groupIndex][fieldKey];
         newBody[groupIndex][fieldKey] = value;
-        if (!formerValue || !value) {
-            const filledFields = [];
-            const allFields = document.querySelectorAll('form input:not([type=hidden]), form textarea, form select');
-            this.filledFields(newBody, filledFields);
-            const progress = Math.round(filledFields.length * 100 / allFields.length);
-
-            this.setState({ progress });
-        }
+        if (!formerValue || !value) this.setProgress(newBody);
 
         this.setState({ body: newBody });
+    }
+
+    setProgress = body => {
+        const filledFields = [];
+        const allFields = document.querySelectorAll('form input:not([type=hidden]), form textarea, form select');
+        this.filledFields(body, filledFields);
+        const progress = Math.round(filledFields.length * 100 / allFields.length);
+
+        this.setState({ progress });
     }
 
     filledFields = (obj, fields) => {
@@ -154,15 +156,9 @@ class Index extends Component {
         if (!prevProps.backend.projects.form && this.props.backend.projects.form) {
             const { backend: { projects: { form } } } = this.props;
             this.setState({ ...form }, () => {
-                const filledFields = [];
-                const allFields = document.querySelectorAll('form input:not([type=hidden]), form textarea, form select');
-                this.filledFields(form.body, filledFields);
-                const progress = Math.round(filledFields.length * 100 / allFields.length);
-
+                this.setProgress(form.body);
                 this.initImageZoom();
                 if (!form.body) this.initNanonetsApi(form.file, body => this.setState({ body }));
-
-                this.setState({ progress });
             });
         }
     }
@@ -227,8 +223,8 @@ class Index extends Component {
                         <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name="form[0][contact_no]" value={this.fieldValue(0, 'contact_no')} label={form.contact_no} />
                         <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name="form[0][state]" value={this.fieldValue(0, 'state')} label={form.state} />
                     </div>}
-                    
-                    {<div className={'row' + (page === 1 ? "" : " d-none")}>
+
+                    {<div className={'row' + (page === 2 ? "" : " d-none")}>
                         <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name="form[1][product]" value={this.fieldValue(1, 'product')} label={form.product} />
                     </div>}
                 </form>

@@ -674,22 +674,23 @@ var Index = /*#__PURE__*/function (_Component) {
       if (newBody.indexOf(groupIndex) === -1) newBody.push(_defineProperty({}, fieldKey, ''));
       var formerValue = newBody[groupIndex][fieldKey];
       newBody[groupIndex][fieldKey] = value;
-
-      if (!formerValue || !value) {
-        var filledFields = [];
-        var allFields = document.querySelectorAll('form input:not([type=hidden]), form textarea, form select');
-
-        _this.filledFields(newBody, filledFields);
-
-        var progress = Math.round(filledFields.length * 100 / allFields.length);
-
-        _this.setState({
-          progress: progress
-        });
-      }
+      if (!formerValue || !value) _this.setProgress(newBody);
 
       _this.setState({
         body: newBody
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setProgress", function (body) {
+      var filledFields = [];
+      var allFields = document.querySelectorAll('form input:not([type=hidden]), form textarea, form select');
+
+      _this.filledFields(body, filledFields);
+
+      var progress = Math.round(filledFields.length * 100 / allFields.length);
+
+      _this.setState({
+        progress: progress
       });
     });
 
@@ -794,12 +795,7 @@ var Index = /*#__PURE__*/function (_Component) {
       if (!prevProps.backend.projects.form && this.props.backend.projects.form) {
         var form = this.props.backend.projects.form;
         this.setState(_objectSpread({}, form), function () {
-          var filledFields = [];
-          var allFields = document.querySelectorAll('form input:not([type=hidden]), form textarea, form select');
-
-          _this2.filledFields(form.body, filledFields);
-
-          var progress = Math.round(filledFields.length * 100 / allFields.length);
+          _this2.setProgress(form.body);
 
           _this2.initImageZoom();
 
@@ -807,10 +803,6 @@ var Index = /*#__PURE__*/function (_Component) {
             return _this2.setState({
               body: body
             });
-          });
-
-          _this2.setState({
-            progress: progress
           });
         });
       }
@@ -973,7 +965,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 label: form.state
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-              className: 'row' + (page === 1 ? "" : " d-none"),
+              className: 'row' + (page === 2 ? "" : " d-none"),
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
                 className: "col-lg-6",
                 type: "text",
