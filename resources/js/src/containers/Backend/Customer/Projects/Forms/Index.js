@@ -227,7 +227,7 @@ class Index extends Component {
                     </div>}
 
                     {<div className={'row' + (page === 2 ? "" : " d-none")}>
-                        <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name={"form[" + CSS.escape("1") + "][product]"} value={this.fieldValue(1, 'product')} label={form.product} />
+                        <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name={"form[1][product]"} value={this.fieldValue(1, 'product')} label={form.product} />
                     </div>}
                 </form>
 
