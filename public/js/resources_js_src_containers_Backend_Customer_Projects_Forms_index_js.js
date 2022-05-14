@@ -756,7 +756,7 @@ var Index = /*#__PURE__*/function (_Component) {
             var _data = JSON.parse(responseText);
 
             var resultBody = [{}, {}, {}];
-            var fieldsPerLine = [['form_number', 'company_code', 'company_name', 'company_address', 'zip_code', 'fax', 'website', 'email', 'contact_no', 'state'], [], []];
+            var fieldsPerLine = [['form_number', 'company_code', 'company_name', 'company_address', 'zip_code', 'fax', 'website', 'email', 'contact_no', 'state'], ['product'], []];
 
             _data.result.forEach(function (page) {
               return page.prediction.map(function (line) {
@@ -897,9 +897,9 @@ var Index = /*#__PURE__*/function (_Component) {
                 children: [progress, " %"]
               })]
             })]
-          }), errors, flash, feedback, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("form", {
+          }), errors, flash, feedback, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("form", {
             onSubmit: this.submitHandler,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
               className: 'row' + (page === 1 ? "" : " d-none"),
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
                 className: "col-lg-6",
@@ -972,7 +972,17 @@ var Index = /*#__PURE__*/function (_Component) {
                 value: this.fieldValue(0, 'state'),
                 label: form.state
               })]
-            })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+              className: 'row' + (page === 1 ? "" : " d-none"),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                className: "col-lg-6",
+                type: "text",
+                onChange: this.inputChangeHandler,
+                name: "form[1][product]",
+                value: this.fieldValue(0, 'product'),
+                label: form.product
+              })
+            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "pages-wrapper",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {

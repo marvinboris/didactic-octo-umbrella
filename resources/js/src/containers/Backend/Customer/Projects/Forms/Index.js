@@ -124,7 +124,7 @@ class Index extends Component {
                     const resultBody = [{}, {}, {}];
                     const fieldsPerLine = [
                         ['form_number', 'company_code', 'company_name', 'company_address', 'zip_code', 'fax', 'website', 'email', 'contact_no', 'state'],
-                        [],
+                        ['product'],
                         []
                     ]
                     data.result.forEach(page => page.prediction.map(line => {
@@ -226,6 +226,10 @@ class Index extends Component {
                         <Input className="col-lg-6" type="email" onChange={this.inputChangeHandler} name="form[0][email]" value={this.fieldValue(0, 'email')} label={form.email} />
                         <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name="form[0][contact_no]" value={this.fieldValue(0, 'contact_no')} label={form.contact_no} />
                         <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name="form[0][state]" value={this.fieldValue(0, 'state')} label={form.state} />
+                    </div>}
+                    
+                    {<div className={'row' + (page === 1 ? "" : " d-none")}>
+                        <Input className="col-lg-6" type="text" onChange={this.inputChangeHandler} name="form[1][product]" value={this.fieldValue(0, 'product')} label={form.product} />
                     </div>}
                 </form>
 
