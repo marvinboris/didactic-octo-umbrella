@@ -121,18 +121,17 @@ class Index extends Component {
                 const responseText = this.responseText;
                 if (!!responseText) {
                     const data = JSON.parse(responseText);
-                    console.log({ data })
                     const resultBody = [{}, {}, {}];
                     const fieldsPerLine = [
                         ['form_number', 'company_code', 'company_name', 'company_address', 'zip_code', 'fax', 'website', 'email', 'contact_no', 'state'],
                         [],
                         []
                     ]
-                    data.result.prediction.map(line => {
+                    data.result.forEach(page => page.prediction.map(line => {
                         const lineIndex = fieldsPerLine.find(fields => fields.includes(line.label));
                         resultBody[lineIndex][line.label] = line.ocr_text;
                         callback(resultBody);
-                    });
+                    }));
                 }
             }
         });
