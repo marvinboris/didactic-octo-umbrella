@@ -816,6 +816,21 @@ var Index = /*#__PURE__*/function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "initNanonetsApi", function (imageUrl) {
+      var data = 'urls=' + imageUrl;
+      var model_id = '5b1f9938-5dce-43ee-99ac-50a15a9d4444';
+      var xhr = new XMLHttpRequest();
+      xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+          console.log(this.responseText);
+        }
+      });
+      xhr.open("POST", "https://app.nanonets.com/api/v2/OCR/Model/" + model_id + "/LabelUrls/");
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.setRequestHeader("authorization", "Basic " + window.btoa("C__nAi2j5eYk444W2ILvpD6-f3LX56ak:"));
+      xhr.send(data);
+    });
+
     return _this;
   }
 
@@ -842,9 +857,10 @@ var Index = /*#__PURE__*/function (_Component) {
 
           _this2.initImageZoom(); // this.initMicrosoftOcr(form.file);
           // this.loadImage(form.file);
+          // this.initOcrApi(form.file);
 
 
-          _this2.initOcrApi(form.file);
+          _this2.initNanonetsApi(form.file);
 
           _this2.setState({
             progress: progress

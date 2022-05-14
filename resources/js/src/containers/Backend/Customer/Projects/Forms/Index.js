@@ -174,6 +174,25 @@ class Index extends Component {
             .catch(err => console.error(err));
     }
 
+    initNanonetsApi = imageUrl => {
+        const data = 'urls=' + imageUrl;
+        const model_id = '5b1f9938-5dce-43ee-99ac-50a15a9d4444';
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("POST", "https://app.nanonets.com/api/v2/OCR/Model/" + model_id + "/LabelUrls/");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("authorization", "Basic " + window.btoa("C__nAi2j5eYk444W2ILvpD6-f3LX56ak:"));
+
+        xhr.send(data);
+    }
+
 
 
     // Lifecycle components
@@ -193,7 +212,8 @@ class Index extends Component {
                 this.initImageZoom();
                 // this.initMicrosoftOcr(form.file);
                 // this.loadImage(form.file);
-                this.initOcrApi(form.file);
+                // this.initOcrApi(form.file);
+                this.initNanonetsApi(form.file);
 
                 this.setState({ progress });
             });
