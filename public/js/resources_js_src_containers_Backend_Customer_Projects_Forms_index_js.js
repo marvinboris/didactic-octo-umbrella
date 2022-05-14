@@ -975,7 +975,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 className: "col-lg-6",
                 type: "text",
                 onChange: this.inputChangeHandler,
-                name: "form[1][product]",
+                name: "form[" + CSS.escape("1") + "][product]",
                 value: this.fieldValue(1, 'product'),
                 label: form.product
               })
